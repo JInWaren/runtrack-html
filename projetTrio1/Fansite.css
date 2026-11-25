@@ -1,0 +1,598 @@
+/* ===== PAGE ENTIÈRE ===== */
+
+body {
+    margin: 0;
+    /* enlève la marge blanche que le navigateur met autour de la page */
+    background-color: #000000;
+    /* fond de la page : noir */
+    font-family: Arial, sans-serif;
+    /* police de tous les textes (sans-serif = police de secours) */
+}
+
+/* ===== BARRE DE NAVIGATION ===== */
+
+.navbar {
+    display: flex;
+    /* met les éléments de la barre côte à côte */
+    justify-content: center;
+    /* centre le menu horizontalement */
+    align-items: center;
+    /* centre le menu verticalement dans la barre */
+    background-color: #1a1a1a;
+    /* fond de la barre : gris très foncé */
+    padding: 15px 30px;
+    /* espace intérieur : 15px en haut/bas, 30px à gauche/droite */
+    position: sticky;
+    /* la barre se "colle" en haut quand on descend dans la page */
+    top: 0;
+    /* elle se colle tout en haut de l'écran */
+    z-index: 10;
+    /* la place au-dessus des autres éléments quand ils passent dessous */
+}
+
+.menu {
+    display: flex;
+    /* met les liens du menu côte à côte */
+    gap: 100px;
+    /* espace entre chaque lien */
+    list-style: none;
+    /* enlève les puces de la liste */
+    margin: 0;
+    /* enlève l'espace extérieur par défaut de la liste */
+    padding: 0;
+    /* enlève le décalage à gauche par défaut de la liste */
+}
+
+.menu a {
+    color: #e6c35c;
+    /* couleur des liens : doré */
+    text-decoration: none;
+    /* enlève le soulignement des liens */
+    font-size: 22px;
+    /* taille du texte */
+    font-weight: bold;
+    /* texte en gras */
+}
+
+/* ===== NOM ===== */
+
+.hero {
+    padding: 50px 60px 10px 60px;
+    /* espace intérieur : 50px en haut, 60px à droite, 10px en bas, 60px à gauche */
+}
+
+.titre {
+    font-size: 100px;
+    /* très grand titre */
+    margin: 0;
+    /* enlève l'espace autour du titre */
+    color: #e6c35c;
+    /* titre doré */
+}
+
+.sous-titre {
+    font-size: 24px;
+    /* taille du sous-titre */
+    margin: 5px 0 0 0;
+    /* 5px d'espace au-dessus, 0 ailleurs */
+    color: #f3e3a8;
+    /* doré très clair */
+}
+
+/* ===== PHOTO + BIOGRAPHIE ===== */
+
+.presentation {
+    display: flex;
+    /* met la photo et le texte côte à côte */
+    align-items: flex-start;
+    /* les aligne tous les deux en haut */
+    gap: 40px;
+    /* espace entre la photo et le texte */
+    padding: 20px 60px;
+    /* espace intérieur : 20px en haut/bas, 60px à gauche/droite */
+}
+
+.presentation img {
+    width: 350px;
+    /* largeur de la photo */
+    height: 450px;
+    /* hauteur de la photo */
+    object-fit: cover;
+    /* remplit le cadre en recadrant l'image, sans la déformer */
+    border-radius: 12px;
+    /* arrondit les coins */
+    background-color: #333;
+    /* gris affiché si l'image ne charge pas */
+    flex-shrink: 0;
+    /* empêche la photo de se faire écraser quand la place manque */
+}
+
+.textes {
+    flex: 1;
+    /* le bloc de texte prend la place restante à côté de la photo */
+    max-width: 600px;
+    /* le texte ne dépasse jamais cette largeur */
+    min-width: 0;
+    /* évite que le texte déborde hors de l'écran */
+    margin-left: 330px;
+    /* décale le texte vers la droite */
+}
+
+.intro {
+    font-size: 20px;
+    /* taille du texte de la biographie */
+    line-height: 1.6;
+    /* espace entre les lignes (1.6 fois la taille du texte) */
+    margin: 0 0 20px 0;
+    /* 20px d'espace sous chaque paragraphe */
+    color: #f3e3a8;
+    /* doré très clair, facile à lire sur noir */
+}
+
+/* ===== TITRES DE SECTION ===== */
+
+.section-titre {
+    font-size: 60px;
+    /* taille du titre de section */
+    margin: 70px 60px 25px 60px;
+    /* espace : 70px en haut, 60px à droite, 25px en bas, 60px à gauche */
+    color: #e6c35c;
+    /* titre doré */
+}
+
+/* ===== CARTES D'ACTUALITÉ ===== */
+
+.cartes {
+    display: flex;
+    /* met les cartes côte à côte */
+    flex-wrap: wrap;
+    /* elles passent à la ligne s'il n'y a plus de place */
+    gap: 25px;
+    /* espace entre les cartes */
+    padding: 0 60px;
+    /* 60px à gauche et à droite, aligné avec ton titre */
+}
+
+.carte {
+    width: 250px;
+    /* largeur d'une carte */
+    background-color: #181818;
+    /* fond gris très foncé */
+    border-radius: 12px;
+    /* coins arrondis */
+    padding: 15px;
+    /* espace entre le bord de la carte et son contenu */
+    transition: transform 0.3s, background-color 0.3s;
+    /* animation douce au survol */
+}
+
+.carte:hover {
+    transform: translateY(-8px);
+    /* la carte monte de 8px quand la souris passe dessus */
+    background-color: #282828;
+    /* elle s'éclaircit un peu */
+}
+
+.carte img {
+    width: 100%;
+    /* l'image prend toute la largeur de la carte */
+    height: 220px;
+    /* hauteur de l'image */
+    object-fit: cover;
+    /* remplit le cadre en recadrant, sans déformer */
+    border-radius: 8px;
+    /* coins de l'image arrondis */
+    background-color: #333;
+    /* gris affiché si l'image manque */
+}
+
+.carte h3 {
+    margin: 15px 0 5px 0;
+    /* 15px au-dessus du titre, 5px en dessous */
+    font-size: 18px;
+    /* taille du titre */
+    color: #e6c35c;
+    /* titre doré */
+}
+
+.carte .date {
+    margin: 0 0 8px 0;
+    /* 8px d'espace sous la date */
+    font-size: 13px;
+    /* date en petit */
+    color: #999;
+    /* date en gris */
+}
+
+.carte p {
+    margin: 0;
+    /* enlève l'espace par défaut des paragraphes */
+    font-size: 15px;
+    /* taille du texte */
+    color: #f3e3a8;
+    /* doré très clair */
+}
+
+
+
+/* ===== ALBUMS CÔTE À CÔTE ===== */
+
+.albums {
+    display: flex;
+    /* met les 4 albums côte à côte */
+    flex-wrap: wrap;
+    /* ils passent à la ligne si l'écran est trop étroit */
+    gap: 25px;
+    /* espace entre les albums */
+    padding: 0 60px;
+    /* aligné avec tes autres titres */
+}
+
+.album-carte {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 290px;
+    background-color: #181818;
+    border-radius: 12px;
+    padding: 15px;
+    transition: transform 0.3s, background-color 0.3s;
+    /* animation douce quand on survole */
+}
+
+.album-carte:hover {
+    transform: translateY(-8px);
+    /* l'album monte de 8px quand la souris passe dessus */
+    background-color: #282828;
+    /* il s'éclaircit un peu */
+}
+
+.album-carte img {
+    width: 110px;
+    /* taille de la pochette */
+    height: 110px;
+    /* carrée */
+    object-fit: cover;
+    /* remplit le cadre sans déformer */
+    border-radius: 8px;
+    background-color: #333;
+    /* gris si l'image manque */
+    flex-shrink: 0;
+    /* la pochette ne se fait pas écraser */
+}
+
+.album-texte h3 {
+    margin: 0 0 6px 0;
+    font-size: 20px;
+    /* nom de l'album */
+    color: #e6c35c;
+    /* doré */
+}
+
+.album-date {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+    /* date */
+    color: #f3e3a8;
+}
+
+.album-vues {
+    margin: 0;
+    font-size: 14px;
+    /* vues, juste sous la date */
+    color: #999;
+    /* en gris */
+}
+
+
+/* ===== ÉVÉNEMENTS ===== */
+
+/* Centrer le titre Événements */
+#evenements .section-titre {
+    text-align: center; /* Centre le texte horizontalement */
+}
+
+
+/* Sous-titre des événements */
+.evenements-sous-titre {
+    margin: 30px auto 10px auto; /* 30px en haut, auto à droite et à gauche pour centrer, 10px en bas */
+    max-width: 800px;            /* Définit une largeur maximale de 800 pixels */
+    text-align: center;          /* Centre le texte */
+    font-size: 26px;             /* Définit la taille du texte à 26 pixels */
+    color: #e6c35c;              /* Donne une couleur dorée au texte */
+}
+
+
+/* Liste des événements */
+.evenements-liste {
+    list-style: none; /* Supprime les puces de la liste */
+    margin: 0 auto;   /* Supprime les marges en haut et en bas et centre horizontalement */
+    padding: 0;       /* Supprime l'espace intérieur de la liste */
+    max-width: 800px; /* Empêche la liste de dépasser 800 pixels */
+    width: 90%;       /* La liste prend 90% de la largeur disponible */
+}
+
+
+/* Chaque événement de la liste */
+.evenements-liste li {
+    padding: 15px 20px;             /* Ajoute 15px en haut et en bas, 20px à gauche et à droite */
+    margin-bottom: 12px;            /* Ajoute 12px d'espace sous chaque événement */
+    background-color: #181818;      /* Définit un fond gris très foncé */
+    border-left: 4px solid #e6c35c; /* Ajoute une bordure dorée de 4px à gauche */
+    border-radius: 8px;             /* Arrondit les quatre coins de l'encadré */
+    color: #f3e3a8;                  /* Définit la couleur du texte en doré clair */
+    line-height: 1.6;               /* Augmente l'espace entre les lignes de texte */
+
+    transition: transform 0.3s, background-color 0.3s; /* Rend le déplacement et le changement de couleur progressifs pendant 0,3 seconde */
+}
+
+
+/* Animation au passage de la souris sur un événement */
+.evenements-liste li:hover {
+    transform: translateY(-8px); /* Déplace l'événement de 8px vers le haut */
+    background-color: #282828;   /* Éclaircit le fond au survol */
+}
+
+
+/* Mettre les textes importants en doré */
+.evenements-liste strong {
+    color: #e6c35c; /* Change la couleur des textes en gras en doré */
+}
+
+
+/* Badge pour les événements annulés */
+.badge-annule {
+    display: inline-block; /* Permet au badge de rester sur la même ligne tout en ayant ses propres dimensions */
+    margin-left: 8px;       /* Ajoute 8px d'espace à gauche du badge */
+    padding: 2px 10px;      /* Ajoute 2px en haut et en bas, 10px à gauche et à droite */
+    background-color: #555; /* Donne un fond gris au badge */
+    color: #fff;            /* Met le texte en blanc */
+    font-size: 12px;        /* Définit la taille du texte à 12 pixels */
+    border-radius: 20px;    /* Arrondit fortement les coins pour créer une forme de pilule */
+}
+
+
+/* Texte explicatif des événements */
+.evenements-explication {
+    max-width: 800px;          /* Définit une largeur maximale de 800 pixels */
+    width: 90%;                /* Utilise 90% de la largeur disponible */
+    margin: 25px auto 0 auto;  /* Ajoute 25px en haut, centre horizontalement et met 0 en bas */
+    text-align: center;        /* Centre le texte */
+    font-size: 16px;           /* Définit la taille du texte à 16 pixels */
+    line-height: 1.6;           /* Augmente l'espace entre les lignes */
+    color: #999;               /* Donne une couleur grise au texte */
+}
+
+
+/* ===== PHOTOS ET VIDÉOS ===== */
+
+/* Centrer le titre Photos et vidéos */
+#medias .section-titre {
+    text-align: center; /* Centre le titre horizontalement */
+}
+
+
+/* Sous-titres de la partie médias */
+.medias-sous-titre {
+    margin: 30px auto 20px auto; /* Ajoute 30px en haut, centre horizontalement et 20px en bas */
+    text-align: center;          /* Centre le texte */
+    font-size: 26px;             /* Définit la taille du texte à 26 pixels */
+    color: #e6c35c;              /* Donne une couleur dorée au texte */
+}
+
+
+/* ===== GALERIE PHOTOS ===== */
+
+.galerie-photos {
+    display: flex;          /* Active Flexbox pour organiser les cartes */
+    justify-content: center; /* Centre les cartes horizontalement */
+    flex-wrap: wrap;        /* Autorise les cartes à passer à la ligne si nécessaire */
+    gap: 25px;              /* Ajoute 25px d'espace entre les cartes */
+    padding: 0 20px;        /* Ajoute 20px d'espace intérieur à gauche et à droite */
+}
+
+
+/* Apparence des cartes photos */
+.photo-carte {
+    width: 250px;             /* Définit une largeur de 250 pixels */
+    background-color: #181818; /* Donne un fond gris très foncé */
+    border-radius: 12px;      /* Arrondit les coins de la carte */
+    padding: 10px;            /* Ajoute 10px d'espace intérieur */
+    transition: transform 0.3s, background-color 0.3s; /* Rend les animations progressives pendant 0,3 seconde */
+}
+
+
+/* Animation au survol des photos */
+.photo-carte:hover {
+    transform: translateY(-8px); /* Fait monter la carte de 8px au passage de la souris */
+    background-color: #282828;   /* Éclaircit le fond au survol */
+}
+
+
+/* Apparence des images dans les cartes */
+.photo-carte img {
+    width: 100%;          /* L'image prend toute la largeur disponible dans la carte */
+    height: 250px;        /* Définit une hauteur de 250 pixels */
+    object-fit: cover;    /* Remplit l'espace sans déformer l'image, quitte à couper les bords */
+    border-radius: 8px;   /* Arrondit les coins de l'image */
+}
+
+
+/* ===== VIDÉOS ===== */
+
+.videos {
+    display: flex;           /* Active Flexbox pour organiser les vidéos */
+    justify-content: center; /* Centre les vidéos horizontalement */
+    flex-wrap: wrap;         /* Autorise les vidéos à passer à la ligne */
+    gap: 25px;               /* Ajoute 25px d'espace entre les vidéos */
+    padding: 0 20px;         /* Ajoute 20px d'espace intérieur à gauche et à droite */
+}
+
+
+/* Apparence des cartes vidéo */
+.video-carte {
+    width: 450px;              /* Définit une largeur de 450 pixels */
+    background-color: #181818; /* Donne un fond gris très foncé */
+    border-radius: 12px;       /* Arrondit les coins de la carte */
+    padding: 15px;             /* Ajoute 15px d'espace intérieur */
+    transition: transform 0.3s, background-color 0.3s; /* Rend les animations progressives */
+}
+
+
+/* Animation au survol des vidéos */
+.video-carte:hover {
+    transform: translateY(-8px); /* Fait monter la carte de 8px au passage de la souris */
+    background-color: #282828;   /* Éclaircit le fond au survol */
+}
+
+
+/* Apparence des vidéos YouTube intégrées */
+.video-carte iframe {
+    width: 100%;        /* La vidéo prend toute la largeur disponible */
+    height: 250px;      /* Définit une hauteur de 250 pixels */
+    border: none;       /* Supprime la bordure autour de la vidéo */
+    border-radius: 8px; /* Arrondit les coins de la vidéo */
+}
+
+
+/* Texte sous les vidéos */
+.video-carte p {
+    color: #e6c35c;    /* Donne une couleur dorée au texte */
+    font-size: 16px;   /* Définit la taille du texte à 16 pixels */
+    margin-bottom: 0; /* Supprime la marge en bas du paragraphe */
+}
+
+
+/* ===== RÉSEAUX SOCIAUX ===== */
+
+#reseaux {
+    padding: 40px 20px; /* Ajoute 40px en haut et en bas, 20px à gauche et à droite */
+    text-align: center; /* Centre le texte dans toute la section */
+}
+
+
+/* Conteneur des cartes */
+.reseaux-container {
+    display: flex;          /* Active Flexbox pour organiser les cartes */
+    justify-content: center; /* Centre les cartes horizontalement */
+    flex-wrap: wrap;        /* Autorise les cartes à passer à la ligne */
+    gap: 20px;              /* Ajoute 20px d'espace entre les cartes */
+    margin-top: 30px;       /* Ajoute 30px d'espace au-dessus des cartes */
+}
+
+
+/* Cartes des réseaux sociaux */
+.reseau-carte {
+    background-color: #151515; /* Définit un fond noir légèrement gris */
+    border: 1px solid #c9a227;  /* Ajoute une bordure dorée de 1 pixel */
+    border-radius: 10px;        /* Arrondit les coins de la carte */
+    padding: 25px;              /* Ajoute 25px d'espace intérieur */
+    width: 150px;               /* Définit une largeur de 150 pixels */
+    text-decoration: none;      /* Supprime le soulignement du lien */
+    color: white;               /* Définit la couleur du texte en blanc */
+    transition: 0.3s;           /* Rend les changements visuels progressifs */
+}
+
+
+/* Titre des cartes */
+.reseau-carte h3 {
+    color: #c9a227;       /* Donne une couleur dorée au titre */
+    margin-bottom: 10px; /* Ajoute 10px d'espace sous le titre */
+}
+
+
+/* Texte des cartes */
+.reseau-carte p {
+    margin: 0; /* Supprime les marges autour du paragraphe */
+}
+
+
+/* Animation au survol des cartes */
+.reseau-carte:hover {
+    transform: translateY(-8px); /* Fait monter la carte de 8px au survol */
+    background-color: #252525;   /* Éclaircit légèrement le fond */
+    box-shadow: 0 5px 15px rgba(201, 162, 39, 0.3); /* Ajoute une ombre dorée sous la carte */
+}
+
+
+/* ===== FORMULAIRE DE CONTACT ===== */
+
+#contact {
+    padding: 40px 20px; /* Ajoute 40px en haut et en bas, 20px à gauche et à droite */
+    text-align: center; /* Centre le texte dans la section */
+}
+
+
+/* Conteneur du formulaire */
+.contact-container {
+    max-width: 600px;             /* Limite la largeur du formulaire à 600 pixels */
+    margin: 30px auto;            /* Ajoute 30px en haut et en bas et centre horizontalement */
+    padding: 30px;                /* Ajoute 30px d'espace intérieur */
+    background-color: #151515;    /* Donne un fond noir légèrement gris */
+    border: 1px solid #c9a227;    /* Ajoute une bordure dorée de 1 pixel */
+    border-radius: 10px;          /* Arrondit les coins du formulaire */
+}
+
+
+/* Organisation des champs du formulaire */
+.contact-container form {
+    display: flex;       /* Active Flexbox pour organiser les champs */
+    flex-direction: column; /* Place les champs les uns sous les autres */
+    text-align: left;    /* Aligne les textes à gauche */
+    gap: 12px;           /* Ajoute 12px d'espace entre les éléments */
+}
+
+
+/* Titres des champs */
+.contact-container label {
+    color: #c9a227;   /* Donne une couleur dorée aux titres des champs */
+    font-weight: bold; /* Met les titres en gras */
+}
+
+
+/* Champs de saisie */
+.contact-container input,
+.contact-container textarea {
+    padding: 12px;                 /* Ajoute 12px d'espace intérieur */
+    background-color: #252525;     /* Donne un fond gris foncé aux champs */
+    border: 1px solid #c9a227;     /* Ajoute une bordure dorée de 1 pixel */
+    border-radius: 5px;            /* Arrondit les coins des champs */
+    color: white;                  /* Met le texte saisi en blanc */
+    font-family: Arial, sans-serif; /* Définit la police Arial, ou une police sans-serif si Arial n'est pas disponible */
+    font-size: 14px;               /* Définit la taille du texte à 14 pixels */
+}
+
+
+/* Couleur du texte indicatif dans les champs */
+.contact-container input::placeholder,
+.contact-container textarea::placeholder {
+    color: #aaaaaa; /* Met le texte indicatif en gris clair */
+}
+
+
+/* Redimensionnement de la zone de message */
+.contact-container textarea {
+    resize: vertical; /* Autorise le redimensionnement uniquement en hauteur */
+}
+
+
+/* Bouton Envoyer */
+.contact-container button {
+    margin-top: 10px;       /* Ajoute 10px d'espace au-dessus du bouton */
+    padding: 12px;          /* Ajoute 12px d'espace intérieur */
+    background-color: #c9a227; /* Donne un fond doré au bouton */
+    color: black;            /* Met le texte en noir */
+    border: none;            /* Supprime la bordure du bouton */
+    border-radius: 5px;      /* Arrondit les coins du bouton */
+    font-weight: bold;       /* Met le texte en gras */
+    font-size: 16px;         /* Définit la taille du texte à 16 pixels */
+    cursor: pointer;         /* Affiche une main lorsque la souris passe sur le bouton */
+    transition: 0.3s;        /* Rend les changements visuels progressifs */
+}
+
+
+/* Animation au survol du bouton */
+.contact-container button:hover {
+    background-color: #e0bd45; /* Éclaircit le fond doré au survol */
+    transform: translateY(-3px); /* Déplace le bouton de 3px vers le haut */
+}

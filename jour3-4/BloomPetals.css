@@ -1,0 +1,181 @@
+body {
+    margin: 0;                      /* enlève la marge blanche par défaut autour de la page */
+    background-color: #f7f9f6;      /* (vert) fond très clair avec une pointe de vert */
+}
+
+/* ===== BARRE DE NAVIGATION ===== */
+
+.navbar {
+    display: flex;                  /* met les éléments (menu, recherche) côte à côte */
+    justify-content: space-between; /* le menu à gauche, la recherche à droite */
+    align-items: center;            /* centre les éléments verticalement dans la barre */
+    background-color: #a8bfa5;      /* (vert) barre vert sauge */
+    padding: 15px 30px;             /* espace intérieur : 15px en haut/bas, 30px à gauche/droite */
+}
+
+.menu {
+    display: flex;                  /* met les liens du menu côte à côte */
+    gap: 149px;                     /* espace entre chaque lien */
+    list-style: none;               /* enlève les puces de la liste */
+    margin: 0;                      /* enlève l'espace extérieur par défaut */
+    padding: 0;                     /* enlève le décalage à gauche par défaut des listes */
+}
+
+.menu a {
+    color: black;                   /* couleur du texte des liens */
+    text-decoration: none;          /* enlève le soulignement des liens */
+    font-size: 22px;                /* taille du texte */
+    font-weight: bold;              /* texte en gras */
+}
+
+.recherche {
+    width: 400px;                   /* largeur du champ de recherche */
+    height: 44px;                   /* hauteur du champ */
+    border: none;                   /* enlève la bordure */
+    border-radius: 15px;            /* arrondit les coins */
+    background-color: #dcdcdc;      /* fond gris clair */
+}
+
+/* ===== TITRE ET INTRODUCTION ===== */
+
+.titre {
+    text-align: center;             /* centre le titre horizontalement */
+    font-size: 50px;                /* grande taille pour le titre */
+    margin: 40px 0 10px 0;          /* espaces : haut 40px, droite 0, bas 10px, gauche 0 */
+    color: #3f5a45;                 /* (vert) titre en vert foncé */
+}
+
+.intro {
+    text-align: center;             /* centre le paragraphe */
+    font-size: 21px;                /* taille du texte */
+    max-width: 988px;               /* le paragraphe ne dépasse jamais cette largeur */
+    margin: 0 auto;                 /* "auto" à gauche/droite = centre la boîte dans la page */
+}
+
+/* ===== TRAIT DE SÉPARATION ===== */
+
+.separateur {
+    border: none;                   /* enlève le style par défaut du trait */
+    border-top: 1px solid #a8bfa5;  /* (vert) trait vert sauge */
+    margin: 40px 30px;              /* espace : 40px en haut/bas, 30px sur les côtés */
+}
+
+/* ===== GALERIE 1 ===== */
+
+.galerie {
+    display: flex;                  /* met les images côte à côte */
+    justify-content: center;        /* centre les images */
+    gap: 64px;                      /* espace entre les images */
+}
+
+.galerie img {
+    width: 350px;                   /* largeur des images */
+    height: 254px;                  /* hauteur des images */
+    object-fit: fill;               /* étire l'image pour remplir exactement la boîte */
+    border: 5px solid white;        /* cadre blanc autour de l'image */
+    box-shadow: 0 0 5px #bbb;       /* petite ombre légère */
+}
+
+/* ===== SERVICES ===== */
+
+.services {
+    display: flex;                  /* les 3 services côte à côte */
+    justify-content: center;        /* centrés dans la page */
+    gap: 50px;                      /* espace entre les services */
+    padding: 0 142px;               /* espace à gauche et à droite */
+}
+
+.service {
+    width: 300px;                   /* largeur de chaque service */
+}
+
+.service h3 {
+    font-size: 20px;                /* taille du titre du service */
+    margin: 0 0 10px 0;             /* espace sous le titre */
+    color: #3f5a45;                 /* (vert) titre en vert foncé */
+}
+
+.service p {
+    font-size: 14px;                /* taille du texte */
+    line-height: 1.6;               /* espace entre les lignes du texte */
+    color: #666;                    /* texte gris */
+    margin: 0;                      /* enlève l'espace extérieur par défaut */
+}
+
+/* ===== GALERIE 2 ===== */
+
+.galerie2 {
+    display: flex;                  /* met les images côte à côte */
+    justify-content: center;        /* centre les images */
+    gap: 64px;                      /* espace entre les images */
+}
+
+.galerie2 img {
+    width: 350px;                   /* largeur des images */
+    height: 254px;                  /* hauteur des images */
+    border: 5px solid white;        /* cadre blanc autour de l'image */
+    box-shadow: 0 0 5px #bbb;       /* petite ombre légère */
+}
+
+/* ===== VERSION MOBILE (écrans de 700px ou moins) ===== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;     /* menu au-dessus, recherche en dessous */
+        gap: 15px;                  /* espace entre le menu et la recherche */
+    }
+
+    .menu {
+        flex-wrap: wrap;            /* les liens passent à la ligne s'il manque de la place */
+        justify-content: center;    /* centre les liens */
+        gap: 15px 25px;             /* 15px d'espace vertical, 25px horizontal */
+    }
+
+    .menu a {
+        font-size: 18px;            /* texte des liens plus petit */
+    }
+
+    .recherche {
+        width: 100%;                /* le champ prend toute la largeur disponible */
+        box-sizing: border-box;     /* évite que le champ dépasse de l'écran */
+    }
+
+    .titre {
+        font-size: 32px;            /* titre moins gros */
+    }
+
+    .intro {
+        font-size: 17px;            /* texte plus petit */
+        padding: 0 20px;            /* marge sur les côtés pour ne pas toucher les bords */
+    }
+
+    .separateur {
+        margin: 30px 20px;          /* moins d'espace autour des traits */
+    }
+
+    .galerie,
+    .galerie2 {
+        flex-wrap: wrap;            /* les images passent à la ligne au lieu de dépasser */
+        gap: 20px;                  /* espace réduit entre les images */
+    }
+
+    .galerie img,
+    .galerie2 img {
+        width: 100%;                /* l'image prend toute la largeur disponible */
+        max-width: 350px;           /* mais jamais plus que sa taille normale */
+        height: auto;               /* la hauteur s'adapte pour ne pas déformer l'image */
+        box-sizing: border-box;     /* le cadre blanc reste dans les 100% de largeur */
+    }
+
+    .services {
+        flex-direction: column;     /* les 3 services les uns sous les autres */
+        align-items: center;        /* centrés dans la page */
+        gap: 30px;                  /* espace entre les services */
+        padding: 0 20px;            /* petite marge sur les côtés (avant : 142px) */
+    }
+
+    .services div {
+        width: 100%;                /* chaque service prend toute la largeur disponible */
+    }
+}

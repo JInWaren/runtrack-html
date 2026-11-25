@@ -1,0 +1,125 @@
+body {
+    margin: 0;                      /* enlève la marge blanche par défaut autour de la page */
+    background-color: #f7f9f6;      /* (vert) fond très clair avec une pointe de vert */
+}
+
+/* ===== BARRE DE NAVIGATION ===== */
+
+.navbar {
+    display: flex;                  /* met les éléments (menu, recherche) côte à côte */
+    justify-content: space-between; /* le menu à gauche, la recherche à droite */
+    align-items: center;            /* centre les éléments verticalement dans la barre */
+    background-color: #a8bfa5;      /* (vert) barre vert sauge */
+    padding: 15px 30px;             /* espace intérieur : 15px en haut/bas, 30px à gauche/droite */
+}
+
+.menu {
+    display: flex;                  /* met les liens du menu côte à côte */
+    gap: 149px;                     /* espace entre chaque lien */
+    list-style: none;               /* enlève les puces de la liste */
+    margin: 0;                      /* enlève l'espace extérieur par défaut */
+    padding: 0;                     /* enlève le décalage à gauche par défaut des listes */
+}
+
+.menu a {
+    color: black;                   /* couleur du texte des liens */
+    text-decoration: none;          /* enlève le soulignement des liens */
+    font-size: 22px;                /* taille du texte */
+    font-weight: bold;              /* texte en gras */
+}
+
+.recherche {
+    width: 400px;                   /* largeur du champ de recherche */
+    height: 44px;                   /* hauteur du champ */
+    border: none;                   /* enlève la bordure */
+    border-radius: 15px;            /* arrondit les coins */
+    background-color: #dcdcdc;      /* fond gris clair */
+}
+
+/* ===== TITRE ET INTRODUCTION ===== */
+
+.titre {
+    text-align: center;             /* centre le titre horizontalement */
+    font-size: 50px;                /* grande taille pour le titre */
+    margin: 40px 0 10px 0;          /* espaces : haut 40px, droite 0, bas 10px, gauche 0 */
+    color: #3f5a45;                 /* (vert) titre en vert foncé */
+}
+
+.intro {
+    text-align: center;             /* centre le paragraphe */
+    font-size: 21px;                /* taille du texte */
+    max-width: 988px;               /* le paragraphe ne dépasse jamais cette largeur */
+    margin: 0 auto;                 /* "auto" à gauche/droite = centre la boîte dans la page */
+}
+
+/* ===== TRAIT DE SÉPARATION ===== */
+
+.separateur {
+    border: none;                   /* enlève le style par défaut du trait */
+    border-top: 1px solid #a8bfa5;  /* (vert) trait vert sauge */
+    margin: 40px 30px;              /* espace : 40px en haut/bas, 30px sur les côtés */
+}
+
+/* ===== ÉQUIPE ===== */
+
+.equipe {
+    display: flex;                  /* met les 4 membres côte à côte */
+    justify-content: space-around;  /* répartit l'espace autour de chaque membre */
+    flex-wrap: wrap;                /* si pas assez de place, les membres passent à la ligne */
+    gap: 30px;                      /* espace minimum entre les membres */
+}
+
+.membre {
+    width: 220px;                   /* largeur de chaque membre */
+    text-align: center;             /* centre le nom et le texte sous la photo */
+}
+
+.membre h3 {
+    color: #3f5a45;                 /* (vert) nom en vert foncé */
+}
+
+.membre img {
+    width: 100%;                    /* la photo prend toute la largeur du membre (220px) */
+    height: 220px;                  /* hauteur fixe : les 4 photos ont la même taille */
+    object-fit: fill;               /* étire la photo pour remplir exactement la boîte */
+    border: 4px solid #a8bfa5;      /* (vert) cadre vert sauge autour de la photo */
+    box-sizing: border-box;         /* le cadre reste dans les 220px (sans ça, la photo dépasserait) */
+}
+
+/* ===== VERSION MOBILE (écrans de 700px ou moins) ===== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;     /* menu au-dessus, recherche en dessous */
+        gap: 15px;                  /* espace entre le menu et la recherche */
+    }
+
+    .menu {
+        flex-wrap: wrap;            /* les liens passent à la ligne s'il manque de la place */
+        justify-content: center;    /* centre les liens */
+        gap: 15px 25px;             /* 15px d'espace vertical, 25px horizontal */
+    }
+
+    .menu a {
+        font-size: 18px;            /* texte des liens plus petit */
+    }
+
+    .recherche {
+        width: 100%;                /* le champ prend toute la largeur disponible */
+        box-sizing: border-box;     /* évite que le champ dépasse de l'écran */
+    }
+
+    .titre {
+        font-size: 32px;            /* titre moins gros */
+    }
+
+    .intro {
+        font-size: 17px;            /* texte plus petit */
+        padding: 0 20px;            /* marge sur les côtés pour ne pas toucher les bords */
+    }
+
+    .separateur {
+        margin: 30px 20px;          /* moins d'espace autour des traits */
+    }
+}

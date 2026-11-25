@@ -1,0 +1,60 @@
+body {
+
+    .contenu-cv {
+        max-width: 500px;
+        text-align: left;
+        margin-left: 33%;
+    }
+
+    .colonne-gauche {
+        position: absolute;
+        left: 64px;
+        top: -4px;
+        width: 300px;
+    }
+
+    .pdp {
+        width: 300px;
+    }
+
+}
+
+.logo-html {
+    width: 84px;
+}
+
+.logo-css {
+    width: 84px
+}
+
+
+.logo-python {
+    width: 84px
+}
+
+.logo-bash {
+    width: 84px
+}
+
+.logo-linux {
+    width: 84px
+}
+
+.logo-github {
+    width: 84px
+}
+
+.competences {
+    display: flex;
+    gap: 80px;
+}
+
+
+.colonne-gauche {
+    position: absolute;
+    left: 99px;
+    top: -5px;
+    width: 304px;
+    border-right: 9px solid black;
+    padding-right: 79px;
+}
