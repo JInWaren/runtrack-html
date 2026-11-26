@@ -596,3 +596,287 @@ body {
     background-color: #e0bd45; /* Éclaircit le fond doré au survol */
     transform: translateY(-3px); /* Déplace le bouton de 3px vers le haut */
 }
+
+
+/* ========================================= */
+/* ===== RESPONSIVE : TABLETTES ===== */
+/* ========================================= */
+
+@media screen and (max-width: 768px) {
+
+    /* Empêche les éléments de dépasser de l'écran */
+    * {
+        box-sizing: border-box;
+    }
+
+    /* ===== BARRE DE NAVIGATION ===== */
+
+    .menu {
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu a {
+        font-size: 18px;
+    }
+
+    /* ===== NOM ===== */
+
+    .hero {
+        padding: 35px 25px 10px 25px;
+    }
+
+    .titre {
+        font-size: 65px;
+    }
+
+    /* ===== PHOTO ET BIOGRAPHIE ===== */
+
+    .presentation {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .presentation img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        aspect-ratio: 7 / 9;
+    }
+
+    .textes {
+        margin-left: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .intro {
+        font-size: 17px;
+    }
+
+    /* ===== TITRES DES SECTIONS ===== */
+
+    .section-titre {
+        font-size: 42px;
+        margin: 50px 20px 25px 20px;
+    }
+
+    /* ===== ACTUALITÉ ===== */
+
+    .cartes {
+        padding: 0 20px;
+        justify-content: center;
+    }
+
+    .carte {
+        flex: 1 1 250px;
+        max-width: 350px;
+    }
+
+    /* ===== ALBUMS ===== */
+
+    .albums {
+        padding: 0 20px;
+        justify-content: center;
+    }
+
+    .album-carte {
+        flex: 1 1 290px;
+        max-width: 450px;
+    }
+
+    /* ===== ÉVÉNEMENTS ===== */
+
+    .evenements-liste {
+        width: 90%;
+    }
+
+    .evenements-explication {
+        width: 90%;
+    }
+
+    /* ===== PHOTOS ===== */
+
+    .photo-carte {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* ===== VIDÉOS ===== */
+
+    .video-carte {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .video-carte iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    /* ===== RÉSEAUX SOCIAUX ===== */
+
+    .reseaux-container {
+        justify-content: center;
+    }
+
+    /* ===== CONTACT ===== */
+
+    .contact-container {
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+    }
+
+}
+
+
+/* ========================================= */
+/* ===== RESPONSIVE : TÉLÉPHONES ===== */
+/* ========================================= */
+
+@media screen and (max-width: 480px) {
+
+    /* ===== BARRE DE NAVIGATION ===== */
+
+    .navbar {
+        padding: 12px 10px;
+    }
+
+    .menu {
+        gap: 15px;
+    }
+
+    .menu a {
+        font-size: 15px;
+    }
+
+    /* ===== NOM ===== */
+
+    .hero {
+        padding: 30px 15px 10px 15px;
+    }
+
+    .titre {
+        font-size: 48px;
+    }
+
+    .sous-titre {
+        font-size: 18px;
+    }
+
+    /* ===== PHOTO ET BIOGRAPHIE ===== */
+
+    .presentation {
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .presentation img {
+        max-width: 280px;
+    }
+
+    .intro {
+        font-size: 16px;
+    }
+
+    /* ===== TITRES DES SECTIONS ===== */
+
+    .section-titre {
+        font-size: 32px;
+        margin: 40px 15px 20px 15px;
+    }
+
+    /* ===== ACTUALITÉ ===== */
+
+    .cartes {
+        padding: 0 15px;
+    }
+
+    .carte {
+        width: 100%;
+        max-width: none;
+    }
+
+    /* ===== ALBUMS ===== */
+
+    .albums {
+        padding: 0 15px;
+    }
+
+    .album-carte {
+        width: 100%;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .album-carte img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .album-texte h3 {
+        font-size: 17px;
+    }
+
+    .album-date,
+    .album-vues {
+        font-size: 12px;
+    }
+
+    /* ===== ÉVÉNEMENTS ===== */
+
+    .evenements-sous-titre {
+        font-size: 22px;
+    }
+
+    .evenements-liste li {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .evenements-explication {
+        font-size: 14px;
+    }
+
+    /* ===== PHOTOS ET VIDÉOS ===== */
+
+    .medias-sous-titre {
+        font-size: 22px;
+    }
+
+    .photo-carte {
+        max-width: 100%;
+    }
+
+    .video-carte {
+        padding: 10px;
+    }
+
+    .video-carte p {
+        font-size: 14px;
+    }
+
+    /* ===== RÉSEAUX SOCIAUX ===== */
+
+    .reseau-carte {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    /* ===== CONTACT ===== */
+
+    .contact-container {
+        padding: 15px;
+    }
+
+    .contact-container input,
+    .contact-container textarea {
+        width: 100%;
+        font-size: 16px;
+    }
+
+}
